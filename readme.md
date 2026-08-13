@@ -1,249 +1,510 @@
-# CloudNotes DevOps Platform
+# The Project We'll Build
 
-A production-oriented DevOps and AWS project built from scratch.
+## CloudNotes - Production DevOps Platform
 
-This project is designed as both:
+A simple Notes application that users can:
 
-1. A real-world application
-2. A complete DevOps learning journey
+- Register/Login
+- Create Notes
+- Upload Images
+- Store data in a database
+
+The application itself is simple. The focus is on the infrastructure.
+
+It will eventually include:
+
+```
+User
+    │
+Internet
+    │
+Nginx (Reverse Proxy)
+    │
+Flask API
+    │
+PostgreSQL (AWS RDS)
+    │
+Amazon S3 (Image Storage)
+
+-------------------------
+
+GitHub
+    │
+Webhook
+    │
+Jenkins
+    │
+Docker Build
+    │
+Amazon ECR
+    │
+EC2
+    │
+Docker Compose
+    │
+CloudWatch
+    │
+SNS Alerts
+
+-------------------------
+
+Terraform
+
+creates
+
+IAM
+VPC
+EC2
+RDS
+S3
+Security Groups
+
+-------------------------
+
+Ansible
+
+installs
+
+Docker
+Jenkins
+Nginx
+
+-------------------------
+
+Kubernetes
+
+Deploy Application
+
+
+```
+
+This is close to what many companies use.
 
 ---
 
-## 🎯 Project Goal
+# MASTER ROADMAP
 
-Build, test, deploy, monitor and maintain a cloud-based application while learning the technologies and practices used by DevOps and AWS engineers.
+There are **12 modules**. Each builds on the previous one.
 
 ---
 
-## 🧠 What I Am Learning
+# MODULE 0 — Foundations (2–3 days)
 
-- Linux
-- Git & GitHub
-- Python
-- Flask
-- REST APIs
-- PostgreSQL
-- Testing
+### Goal
+
+Understand the environment you'll work in.
+
+### Learn
+
+- What is DevOps?
+- SDLC (Software Development Life Cycle)
+- CI vs CD
+- Agile basics
+- Client → Server → Database flow
+- HTTP & HTTPS
+- DNS
+- Linux overview
+- Virtualization vs Containers
+- Cloud basics
+- What AWS provides
+
+### Mini Task
+
+Draw your own architecture diagram.
+
+---
+
+# MODULE 1 — Linux (3–4 days)
+
+This is the most important module because almost everything in DevOps runs on Linux.
+
+### Learn
+
+- File system
+- Navigation
+- Permissions
+- Users & groups
+- sudo
+- SSH
+- SCP
+- Vim
+- Nano
+- Networking commands
+- Process management
+- Services (`systemctl`)
+- Cron jobs
 - Environment variables
-- CI/CD
-- AWS IAM
-- AWS VPC
-- AWS EC2
-- AWS RDS
-- AWS S3
-- AWS CloudWatch
-- Deployment
-- Monitoring
-- Troubleshooting
+- Package managers
+- Logs
+
+### Mini Project
+
+Configure a Linux server from scratch.
 
 ---
 
-# 📚 Learning Path
+# MODULE 2 — Git & GitHub (2–3 days)
 
-## Phase 1 — Linux & Git
+### Learn
 
-Learn the Linux environment and Git workflow.
+- init
+- clone
+- add
+- commit
+- push
+- pull
+- branch
+- merge
+- pull requests
+- resolving conflicts
+- `.gitignore`
 
-📖 [Linux & Git Basics](docs/01-linux-git-basics.md)
+### Mini Project
 
----
-
-## Phase 2 — REST API & Flask
-
-Build the CloudNotes backend and understand HTTP, APIs, endpoints and CRUD.
-
-📖 [REST API & Flask](docs/02-rest-api-flask.md)
-
----
-
-## Phase 3 — PostgreSQL
-
-Replace temporary RAM storage with a real persistent database.
-
-📖 [PostgreSQL](docs/03-postgresql.md)
+Host your Notes project on GitHub.
 
 ---
 
-## Phase 4 — Configuration & Secrets
+# MODULE 3 — Python & Flask (2–3 days)
 
-Learn environment variables, configuration management and secret handling.
+You don't need to become a Python expert.
 
-📖 [Configuration & Secrets](docs/04-configuration-secrets.md)
+Learn enough to deploy an application.
 
----
+### Learn
 
-## Phase 5 — Testing
+- Flask basics
+- REST API
+- Routes
+- Environment variables
+- Requirements file
 
-Build automated tests for the application.
+### Mini Project
 
-📖 [Testing](docs/05-testing.md)
-
----
-
-## Phase 6 — Git Workflow
-
-Learn branches, commits, pull requests and professional Git workflows.
-
-📖 [Git Workflow](docs/06-git-workflow.md)
+Build the Notes API.
 
 ---
 
-## Phase 7 — CI/CD
+# MODULE 4 — Docker (4 days)
 
-Automate testing and deployment using GitHub Actions.
+One of the most important DevOps skills.
 
-📖 [CI/CD](docs/07-ci-cd.md)
+### Learn
 
----
+- Images
+- Containers
+- Dockerfile
+- Layers
+- Build
+- Run
+- Volumes
+- Networks
+- Docker Compose
+- Multi-stage builds
 
-## Phase 8 — AWS IAM
+### Mini Project
 
-Learn AWS identities, permissions and security.
-
-📖 [AWS IAM](docs/08-aws-iam.md)
-
----
-
-## Phase 9 — AWS VPC
-
-Understand networking, subnets, route tables and security groups.
-
-📖 [AWS VPC](docs/09-aws-vpc.md)
-
----
-
-## Phase 10 — AWS EC2
-
-Deploy the application to a cloud server.
-
-📖 [AWS EC2](docs/10-aws-ec2.md)
+Run the Notes application in Docker.
 
 ---
 
-## Phase 11 — AWS RDS
+# MODULE 5 — AWS Core (7–8 days)
 
-Move the production database to managed PostgreSQL.
+This is the heart of the roadmap.
 
-📖 [AWS RDS](docs/11-aws-rds.md)
+### IAM
 
----
-
-## Phase 12 — AWS S3
-
-Learn object storage and integrate S3 into the platform.
-
-📖 [AWS S3](docs/12-aws-s3.md)
+- Users
+- Groups
+- Policies
+- Roles
+- MFA
 
 ---
 
-## Phase 13 — CloudWatch
+### EC2
 
-Monitor the application, logs and infrastructure.
-
-📖 [CloudWatch](docs/13-cloudwatch.md)
-
----
-
-## Phase 14 — Deployment
-
-Build a complete deployment workflow.
-
-📖 [Deployment](docs/14-deployment.md)
+- Launch instances
+- SSH
+- Security Groups
+- Elastic IP
+- User Data
 
 ---
 
-## Phase 15 — Final Architecture
+### VPC
 
-Understand the complete system and how all the components work together.
-
-📖 [Final Architecture](docs/15-final-architecture.md)
-
----
-
-# 🔧 Development Philosophy
-
-This project is being built incrementally.
-
-For every technology:
-
-1. Understand the concept
-2. Build something with it
-3. Test it
-4. Break it
-5. Troubleshoot it
-6. Understand the failure
-7. Document the lesson
-8. Commit the changes
-9. Push to GitHub
-10. Move to the next phase
+- Public Subnet
+- Private Subnet
+- Route Table
+- Internet Gateway
+- NAT Gateway
 
 ---
 
-# 🐛 Troubleshooting Journal
+### S3
 
-Real problems encountered during development will be documented instead of hidden.
-
-Examples:
-
-- Python command not found
-- Virtual environment setup issues
-- Flask 405 Method Not Allowed
-- Application restart causing RAM data loss
-- Git configuration issues
-- SSH authentication
-- API testing problems
+- Buckets
+- Objects
+- Versioning
+- Lifecycle
+- Static Hosting
 
 ---
 
-# 🏗️ Final Architecture
+### RDS
 
-The final system will evolve from:
+- PostgreSQL
+- Security
+- Backups
+- Multi-AZ (concept)
 
-Client → Flask → RAM
+---
 
-into:
+### CloudWatch
 
-Client  
-↓  
-Flask API  
-↓  
-AWS infrastructure  
-↓  
-PostgreSQL / RDS
+- Metrics
+- Logs
+- Alarms
+- Dashboards
 
-with:
+---
 
-- IAM
+### ECR
+
+Store Docker images.
+
+---
+
+### SNS
+
+Email alerts.
+
+---
+
+### Mini Project
+
+Deploy Notes application to EC2.
+
+---
+
+# MODULE 6 — CI/CD (5 days)
+
+This is what many internship interviews focus on.
+
+### Jenkins
+
+- Installation
+- Pipeline
+- Jenkinsfile
+- Credentials
+- Agents
+- Plugins
+
+### GitHub Webhooks
+
+Automatically trigger builds.
+
+### Pipeline
+
+```
+Push
+
+↓
+
+GitHub
+
+↓
+
+Jenkins
+
+↓
+
+Build
+
+↓
+
+Test
+
+↓
+
+Docker Build
+
+↓
+
+Push to ECR
+
+↓
+
+Deploy to EC2
+
+```
+
+### Mini Project
+
+Automatic deployment.
+
+---
+
+# MODULE 7 — Nginx (2 days)
+
+### Learn
+
+- Reverse Proxy
+- Load balancing (concept)
+- SSL
+- HTTPS
+- Domain configuration
+
+Mini Project
+
+Access your application through Nginx.
+
+---
+
+# MODULE 8 — Monitoring (2 days)
+
+### CloudWatch
+
+- Logs
+- Metrics
+- Dashboards
+- Alarms
+
+### Linux
+
+- CPU
+- Memory
+- Disk
+
+Mini Project
+
+Receive an email when CPU exceeds a threshold.
+
+---
+
+# MODULE 9 — Terraform (4 days)
+
+Infrastructure as Code.
+
+### Learn
+
+- Providers
+- Variables
+- Outputs
+- Modules (basic)
+- State
+- Plan
+- Apply
+- Destroy
+
+### Mini Project
+
+Provision:
+
 - VPC
 - EC2
-- RDS
 - S3
-- CloudWatch
-- CI/CD
-- GitHub
+- IAM
+- RDS
+
+using Terraform.
 
 ---
 
-# 🚀 Project Status
+# MODULE 10 — Ansible (3 days)
 
-Current phase:
+Automation.
 
-**Phase 2 — REST API & Flask**
+### Learn
 
-Completed:
+- Inventory
+- Playbooks
+- Roles (basic)
+- Variables
+- SSH
 
-- Git repository
-- Linux environment
-- Python virtual environment
-- Flask application
-- REST API
-- GET
-- POST
-- PUT
-- DELETE concept
-- HTTP status codes
-- API troubleshooting
+### Mini Project
 
-Next:
+Install Docker and Nginx automatically on EC2.
 
-**PostgreSQL**
+---
+
+# MODULE 11 — Kubernetes (5–6 days)
+
+Companies increasingly expect at least basic Kubernetes knowledge.
+
+### Learn
+
+- Pods
+- ReplicaSets
+- Deployments
+- Services
+- ConfigMaps
+- Secrets
+- Ingress
+- Rolling Updates
+
+### Mini Project
+
+Deploy Notes application on Kubernetes.
+
+---
+
+# FINAL PROJECT
+
+You'll end up with a repository like this:
+
+```
+cloudnotes-devops/
+
+├── app/
+├── Dockerfile
+├── docker-compose.yml
+├── Jenkinsfile
+├── terraform/
+├── ansible/
+├── kubernetes/
+├── nginx/
+├── monitoring/
+├── scripts/
+├── docs/
+└── README.md
+
+```
+
+This structure is similar to what you'll find in many real engineering teams.
+
+---
+
+# Skills You'll Gain
+
+| SkillPractical outcome |                                         |
+| ---------------------- | --------------------------------------- |
+| Linux                  | Manage servers confidently              |
+| Git                    | Collaborate and track changes           |
+| Python/Flask           | Understand and deploy applications      |
+| Docker                 | Package applications consistently       |
+| AWS                    | Deploy and manage cloud infrastructure  |
+| Jenkins                | Automate builds and deployments         |
+| Nginx                  | Route traffic and enable HTTPS          |
+| CloudWatch             | Monitor systems and troubleshoot        |
+| Terraform              | Provision infrastructure as code        |
+| Ansible                | Automate server configuration           |
+| Kubernetes             | Run containerized applications at scale |
+
+---
+
+# How We'll Work Together
+
+I don't want this to be just another tutorial. We'll treat it like you're joining a company on your first day.
+
+For **every module**, we'll follow the same structure:
+
+1. **Concepts** – Why the technology exists and what problem it solves.
+2. **Hands-on** – Build and configure it from scratch.
+3. **Production Usage** – How companies use it in real environments.
+4. **Interview Questions** – The questions you're likely to face and how to answer them.
+5. **Best Practices** – What experienced engineers do differently.
+6. **Mini Challenge** – A task to complete on your own.
+7. **Project Integration** – Add the new skill to our main DevOps project.
