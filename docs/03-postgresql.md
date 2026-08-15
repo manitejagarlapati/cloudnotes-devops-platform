@@ -1,4 +1,4 @@
-Ah, yes — **`03-postgres.md`**. 👍
+ `03-postgres.md`**. 
 
 That file is documentation for the **PostgreSQL part of CloudNotes**. It is **not another Python/code file**.
 
